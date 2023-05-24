@@ -33,7 +33,7 @@ import org.testng.annotations.Test;
 		driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("techfiosdemo@gmail.com");
 		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("abc123");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		By ALLERT_MSG_LOCATOR = By.xpath("//div[@class = 'wrapper no-navigation preload']");
+		By ALLERT_MSG_LOCATOR = By.xpath("//h2[contains(text(),'Dashboard')]");
 //		waitForElement(driver,10,ALLERT_MSG_LOCATOR);
 		waitForElement(driver, 10, ALLERT_MSG_LOCATOR);
 		

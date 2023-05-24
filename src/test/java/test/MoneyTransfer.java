@@ -47,6 +47,12 @@ public class MoneyTransfer {
 		driver.findElement(By.xpath("//button[@id='submit']")).click();
 		Thread.sleep(3000);
 // Validate transfer posted on the table
+		By ALART_MSG_LOCATOR = By.xpath("//div[@class='alert alert-success fade in']");
+		waitForElement(driver,10,ALART_MSG_LOCATOR);
+			
+	}
+	public void waitForElement(WebDriver driver, int i, By aLART_MSG_LOCATOR) {
+			
 	}
 	public void selectIndex(String xpath, int index) {
 		WebElement element = driver.findElement(By.xpath(xpath));
