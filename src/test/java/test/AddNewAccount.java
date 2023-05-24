@@ -47,6 +47,5 @@ public class AddNewAccount {
 	public void waitForElement(WebDriver driver, int timeInSeconds, By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, timeInSeconds);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-		//Adding a comment
 	}
 }
