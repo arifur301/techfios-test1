@@ -9,8 +9,10 @@ public class basePage {
 	public void waitForElement(WebDriver driver, int timeInSeconds, By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, timeInSeconds);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-		
 	}
 	
+	public void someMethod(){
+		System.out.println("This is a method");
+	}
 
 }
