@@ -12,9 +12,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class AddNewAccount {
-	
+
 	WebDriver driver;
-	
+
 	@Test
 	public void userShouldBeAbleToTransferMoney() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
@@ -31,21 +31,22 @@ public class AddNewAccount {
 		driver.findElement(By.linkText("New Account")).click();
 		Random rnd = new Random();
 		int randomNumber = rnd.nextInt(999);
-		driver.findElement(By.name("account")).sendKeys("Bata"+rnd);
-		driver.findElement(By.name("description")).sendKeys("Abul"+rnd);
-		driver.findElement(By.id("balance")).sendKeys("$"+rnd);
+		driver.findElement(By.name("account")).sendKeys("Bata" + rnd);
+		driver.findElement(By.name("description")).sendKeys("Abul" + rnd);
+		driver.findElement(By.id("balance")).sendKeys("$" + rnd);
 		driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
 		By ALLERT_MSG_LOCATOR = By.xpath("//div[@class='alert alert-success fade in']");
-		waitForElement(driver,10,ALLERT_MSG_LOCATOR );
-		
-	}	
+		waitForElement(driver, 10, ALLERT_MSG_LOCATOR);
+	}
 
 	@AfterClass
 	public void close() {
 		driver.quit();
 	}
+
 	public void waitForElement(WebDriver driver, int timeInSeconds, By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, timeInSeconds);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-}
+		//Adding a comment
+	}
 }
